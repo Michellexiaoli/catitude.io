@@ -1,0 +1,79 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  height: 100vh; /* Full height of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  background-color: #f7f7f7;
+}
+
+h1 {
+  font-size: 2.8em;
+  color: #333;
+  margin-bottom: 100px; /* Space between title and search box */
+}
+
+h1::after {
+  content: " 🐱";
+  font-size: 1.3em;
+  margin-left: 10px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%; /* Adjust width as necessary */
+  max-width: 500px;
+}
+
+input[type="text"] {
+  flex-grow: 1;
+  padding: 10px 20px; /* Same vertical padding and horizontal padding */
+  font-size: 18px; /* Should match the button's font size */
+  border: 1px solid #b4b3b3;
+  border-radius: 10px;
+  margin-right: 10px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+button {
+  padding: 10px 20px; /* Same vertical padding and horizontal padding as the input */
+  font-size: 18px; /* Should match the input's font size */
+  cursor: pointer;
+  background-color: #6d7cd3;
+  color: white;
+  border: 1px solid #6c7acb; /* Same border size as the input */
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  white-space: nowrap;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  position: relative; /* Added for absolute positioning of ::after */
+  display: inline-flex; /* For centering content */
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
+  overflow: hidden; /* Prevents pseudo-element from overflowing */
+}
+
+button:hover span {
+  visibility: hidden;
+}
+
+button:hover::after {
+  content: "🐾";
+  font-size: 18px; /* Match the button's font size */
+  line-height: 1; /* Aligns the emoji vertically */
+  text-align: center; /* Center the content */
+  position: absolute; /* Position it over the button */
+  left: 50%; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Center the content exactly */
+}
+
+#result {
+  margin-top: 20px;
+}
